@@ -1,0 +1,16 @@
+{%extends "base.html"%}
+{% block title%}
+create Region
+{% endblock%}
+
+{% block content%}
+<div class=" bg-dark border border- border-5 shadowed-form m-3 p-3">
+    <form method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        {{form.as_p}}
+        <input type="submit" class="btn btn-primary" value="save"> 
+    </form>
+</div>
+{% include "space.html" %}
+{% include "footer.html" %}
+{% endblock content%}

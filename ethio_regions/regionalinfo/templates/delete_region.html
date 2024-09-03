@@ -1,0 +1,27 @@
+{%extends 'base.html'%}
+{%block title%} delete region{% endblock title%}
+
+{%block content%}
+<form method="post">
+{% csrf_token %}   
+<div class="card text-bg-secondary mb-3" style="max-width: 600px;">
+    <div class="row">
+       <div class="col-4">
+         <img src="{{region.flag.url}}" width="300" height="400" class="card-img-top" alt="{{region.name}}">
+       </div>
+
+            <div class="col-8">
+                <div class="card-body">
+                    <h5 class="card-title">are you sure you want to delete {{region.name}}</h5>
+                    <input type="submit" value="delete" class="btn btn-danger btn-lg">
+                    <a href="{% url 'home' %} " class="btn btn-success btn-lg">cancel</a>
+                </div>
+            </div>
+
+     </div>
+ </div>
+</form>
+{% include "space.html" %}
+
+{% include "footer.html" %}
+{%endblock content%}

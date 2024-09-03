@@ -1,0 +1,38 @@
+{% extends "base.html" %}
+
+
+    {% block content %}
+    <div class="container " >
+        <table class="table table-bordered">
+          <thead>
+            <tr class="bg-primary">
+              <th scope="col">Region Number</th>
+              <th scope="col">Name</th>
+              <th scope="col">Operation on  Region</th>
+            </tr>
+          </thead>
+         
+          <tbody>
+            {%for region in all_region%}
+            <tr>
+                <td>{{region.region_number}}</td>
+              <th scope="row">{{region.name}}</th>
+              <td><a href="{% url 'detail_region' region.id %}">detail</a>
+                <a href="{% url 'update_region' region.id %}">update</a>
+                <a href="{% url 'delete_region' region.id %}">delete</a></td>
+            </tr>
+           
+            {% endfor %}
+          </tbody>
+        </table>
+      </div>
+      
+      
+        
+      {% include "space.html" %}
+      {% include "footer.html" %}
+    
+    {% endblock content%}   
+    
+  
+      

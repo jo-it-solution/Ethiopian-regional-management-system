@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+{%block title%} detail region{% endblock title %}
+{% block content%}
+<div class="container">
+<div class="card" >
+    <img src="{{region.map.url}}" width="300" height="400" class="card-img-top" alt="{{region.name}}">
+    <div class="card-body">
+      <h5 class="card-title">About {{region.name}}</h5>
+      <div class="row">
+        <div class="col-4">
+            <img src="{{region.flag.url}}" width="300" height="400" class="card-img-top" alt="{{region.name}}">
+        </div>
+        <div class="col-8">
+            <p class="card-text">{{region.name}}, a prominent regional state in Ethiopia, plays a vital role 
+                                 in the country’s cultural and economic landscape. Covering an area 
+                                 of approximately {{region.population_size}} square kilometers, it is one of the 
+                                 regions of Ethiopia, showcasing a diverse array of landscapes. 
+                                 The capital city of {{region.name}} is known as {{region.capital_city}}. As of the latest
+                                 estimates, {{region.name}} has a population of around {{region.area_km}} people,
+              </p>
+            <a href="{% url 'home' %}" class="btn btn-primary">Go home</a>
+        </div>    
+     
+    </div>
+    </div>
+  </div>
+</div>
+{% include "space.html" %}
+{% include "footer.html" %}
+{% endblock content%}
